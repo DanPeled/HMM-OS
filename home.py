@@ -3,7 +3,7 @@ import os
 import socket
 import functions as fu
 import psutil
-import datetime
+from datetime import datetime
 
 
 def run():
@@ -19,7 +19,9 @@ def run():
 ╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝  ░╚════╝░╚═════╝░""")
     print(f"WELCOME {l_n}")
     print("The date & time is : ")
-    print(str(datetime.datetime.now()))
+    print(datetime.now().time().strftime("%H:%M:%S"))
+    print(datetime.now().strftime("%Y-%m-%d"))
+
     print(f"Battery level - {battery.percent}%")
     print("""
     """)

@@ -1,6 +1,7 @@
 import random
 import secrets
 import string
+from datetime import datetime
 import time as t  # IMPORTS#
 import turtle
 import pyfiglet
@@ -96,6 +97,14 @@ def re_print(text):
 def ASCII_re_print(text):
     ##
     print(pyfiglet.figlet_format(text[::-1]))
+
+
+def time():
+    print(datetime.now().time().strftime("%H:%M:%S"))
+
+
+def date():
+    print(datetime.now().strftime("%Y-%m-%d"))
 
 
 def help_c():  # Help Command
@@ -378,6 +387,10 @@ def check_for_answers():
         battery_get()
     elif what_to_do.startswith('revprint '):
         re_print(what_to_do[9:])
+    elif what_to_do == 'time':
+        time()
+    elif what_to_do == 'date':
+        date()
     else:
         if check_for_errors(what_to_do) is None:
             print("You have used an un existing  statement, use help for list of commands")

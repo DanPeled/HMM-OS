@@ -3,13 +3,14 @@
 A costume TOS ( Terminal Operating System)
 
 Steps to start :<br/>
+
     &nbsp;&nbsp;&nbsp;&nbsp;1.Create a user.<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;2.Choose a password, every space and small thing in the password matters.<br/>
     &nbsp;&nbsp;&nbsp;&nbsp;3.Login using your password.
   
   
 Commands:
-  
+
           -> website / enter a website <website domain> - enters a website of your choice
           -> open <app name> - opens a app of your choice
           -> help - opens list of commands

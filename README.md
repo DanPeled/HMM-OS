@@ -1,6 +1,6 @@
 # HMMM OS
 
-A costume TOS ( Terminal Operating System)
+A costume TOS (Terminal Operating System)
 
 Steps to start :<br/>
 

@@ -9,7 +9,7 @@ Steps to start :<br/>
     3.Login using your password.
   
   
-<h>Commands:</h>
+<font size="6">Commands</font>
 
     -> website / enter a website <website domain> - enters a website of your choice
     -> open <app name> - opens a app of your choice

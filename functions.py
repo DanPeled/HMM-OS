@@ -99,7 +99,6 @@ def ASCII_re_print(text):
 
 def help_c():  # Help Command
     print(f'{pyfiglet.figlet_format("HELP")}\n'
-          f'---------\n'
           f'-> website / enter a website <website domain> - enters a website of your choice\n'
           f'-> open <app name> - opens a app of your choice\n'
           f'-> help - opens list of commands\n'

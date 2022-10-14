@@ -1,4 +1,4 @@
-# HMMM OS
+# HMM OS
 A costume TOS (Terminal Operating System)
 
 Steps to start :<br/>
@@ -22,3 +22,6 @@ Steps to start :<br/>
     -> battery - shows your battery percentage
     -> revprint <text> - prints a text backwards
     -> ASCII revprint <text> - print a text backwards in ASCII
+# Explanation of files
+<a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and handling responses.<br/>
+home.py - main home screen.<br/>

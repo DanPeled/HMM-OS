@@ -1,6 +1,5 @@
 import time
 import os
-import socket
 import functions as fu
 import psutil
 from datetime import datetime

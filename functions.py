@@ -3,6 +3,7 @@ import secrets
 import string
 from datetime import datetime
 import time as t  # IMPORTS#
+import socket
 import turtle
 import pyfiglet
 import psutil
@@ -26,11 +27,6 @@ def files():
     button = Button(text="Open", command=openFile)
     button.pack()
     window.mainloop()
-
-
-# Functions
-def find_password():
-    print(f"USERNAME : {open('user/username.txt').read()} PASSWORD : {open('user/password.txt').read()}")
 
 
 def clear():
@@ -136,14 +132,30 @@ def help_c():  # Help Command
           -> generate password - generates a 12 characters password
           -> shut down / power off / power - shut downs the computer
           -> you can use math equations e.g - 1 + 5 will return 6
-          -> password - returns you your password
           -> print <text> - prints a text in ASCII
           -> battery - shows your battery percentage
           -> revprint <text> - prints a text backwards
           -> ASCII revprint <text> - print a text backwards in ASCII
           -> date - returns the current date
           -> time - returns the current time
-          -> file - opens a file explorer to choose a file to open from""")
+          -> file - opens a file explorer to choose a file to open from
+          -> BIOS - displays the user information, requires password entry""")
+
+
+def display_info():
+    while True:
+        b_login = input('enter your password to see bios')
+        if b_login == open('user/password.txt').read():
+            print('Opening BIOS')
+            host_name = socket.gethostname()
+            host_ip = socket.gethostbyname(host_name)
+            print(f'[1] USERNAME : {open("user/username.txt").read()}\n'
+                  f'[2] PASSWORD : {open("user/password.txt").read()}\n'
+                  f'HOST NAME : {host_name}\n'
+                  f'LOCAL IPS : {host_ip}')
+            break
+        else:
+            continue
 
 
 def _color(color, text: str = '') -> str:  # Terminal set color command
@@ -400,8 +412,8 @@ def check_for_answers():
         generate_password()
     elif what_to_do[0] in str(digits):
         calculator(what_to_do)
-    elif what_to_do == 'password':
-        find_password()
+    elif what_to_do == 'BIOS':
+        display_info()
     elif what_to_do.startswith('print '):
         _printASCII(what_to_do[6:])
     elif what_to_do.startswith('ASCII revprint '):

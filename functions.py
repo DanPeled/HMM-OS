@@ -8,6 +8,24 @@ import pyfiglet
 import psutil
 import pyautogui as pg
 from colorama import Fore, Style
+from tkinter import *
+from tkinter import filedialog
+import os
+
+
+def files():
+    def openFile():
+        filepath = filedialog.askopenfilename(initialdir="/",
+                                              title="Open file okay?",
+                                              filetypes=(("text files", "*.txt"),
+                                                         ("all files", "*.*")))
+        os.startfile(filepath)
+
+    window = Tk()
+    window.title = 'Choose a file'
+    button = Button(text="Open", command=openFile)
+    button.pack()
+    window.mainloop()
 
 
 # Functions
@@ -393,6 +411,8 @@ def check_for_answers():
         time()
     elif what_to_do == 'date':
         date()
+    elif what_to_do == 'file':
+        files()
     else:
         if check_for_errors(what_to_do) is None:
             print("You have used an un existing  statement, use help for list of commands")

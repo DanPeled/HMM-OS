@@ -27,4 +27,4 @@ Steps to start :<br/>
     -> BIOS - displays the user information, requires password entry
 # Explanation of files
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and handling responses.<br/>
-home.py - main home screen.<br/>
+<a href = "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/home.py">home.py</a> - main home screen.

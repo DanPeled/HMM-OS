@@ -128,19 +128,19 @@ def date():
 
 
 def help_c():  # Help Command
-    print(f'{pyfiglet.figlet_format("HELP")}\n'
-          f'-> website / enter a website <website domain> - enters a website of your choice\n'
-          f'-> open <app name> - opens a app of your choice\n'
-          f'-> help - opens list of commands\n'
-          f'-> desk / desktop - opens your desktop\n'
-          f'-> generate password - generates a 12 characters password\n'
-          f'-> shut down / power off / power - shut downs the computer\n'
-          f'-> you can use math equations e.g - 1 + 5 will return 6\n'
-          f'-> password - returns you your password\n'
-          f'-> print <text> - prints a text in ASCII\n'
-          f'-> battery - shows your battery percentage\n'
-          f'-> revprint <text> - prints a text backwards\n'
-          f'-> ASCII revprint <text> - print a text backwards in ASCII')
+    print(f'{pyfiglet.figlet_format("HELP")}\n',
+          """-> website / enter a website <website domain> - enters a website of your choice
+          -> open <app name> - opens a app of your choice
+          -> help - opens list of commands
+          -> desk / desktop - opens your desktop
+          -> generate password - generates a 12 characters password
+          -> shut down / power off / power - shut downs the computer
+          -> you can use math equations e.g - 1 + 5 will return 6
+          -> password - returns you your password
+          -> print <text> - prints a text in ASCII
+          -> battery - shows your battery percentage
+          -> revprint <text> - prints a text backwards
+          -> ASCII revprint <text> - print a text backwards in ASCII'""")
 
 
 def _color(color, text: str = '') -> str:  # Terminal set color command

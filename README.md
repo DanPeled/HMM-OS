@@ -22,6 +22,9 @@ Steps to start :<br/>
     -> battery - shows your battery percentage
     -> revprint <text> - prints a text backwards
     -> ASCII revprint <text> - print a text backwards in ASCII
+    -> date - returns the current date
+    -> time - returns the current time
+    -> file - opens a file explorer to choose a file to open from
 # Explanation of files
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and handling responses.<br/>
 home.py - main home screen.<br/>

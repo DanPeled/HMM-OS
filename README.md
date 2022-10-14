@@ -1,4 +1,8 @@
+<<<<<<< HEAD
     # HMMM OS
+=======
+# HMMM OS
+>>>>>>> origin/Hmmm_OS
 
 A costume TOS (Terminal Operating System)
 

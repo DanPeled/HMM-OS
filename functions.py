@@ -125,21 +125,21 @@ def date():
 
 def help_c():  # Help Command
     print(f'{pyfiglet.figlet_format("HELP")}\n',
-          """         -> website / enter a website <website domain> - enters a website of your choice
-          -> open <app name> - opens a app of your choice
-          -> help - opens list of commands
-          -> desk / desktop - opens your desktop
-          -> generate password - generates a 12 characters password
-          -> shut down / power off / power - shut downs the computer
-          -> you can use math equations e.g - 1 + 5 will return 6
-          -> print <text> - prints a text in ASCII
-          -> battery - shows your battery percentage
-          -> revprint <text> - prints a text backwards
-          -> ASCII revprint <text> - print a text backwards in ASCII
-          -> date - returns the current date
-          -> time - returns the current time
-          -> file - opens a file explorer to choose a file to open from
-          -> BIOS - displays the user information, requires password entry""")
+          """         [1] website / enter a website <website domain> - enters a website of your choice
+    [2] open <app name> - opens a app of your choice
+    [3] help - opens list of commands
+    [4] desk / desktop - opens your desktop
+    [5] generate password - generates a 12 characters password
+    [6] shut down / power off / power - shut downs the computer
+    [7] you can use math equations e.g - 1 + 5 will return 6
+    [8] print <text> - prints a text in ASCII
+    [9] battery - shows your battery percentage
+    [10] revprint <text> - prints a text backwards
+    [11] ASCII revprint <text> - print a text backwards in ASCII
+    [12] date - returns the current date
+    [13] time - returns the current time
+    [14] file - opens a file explorer to choose a file to open from
+    [15] BIOS - displays the user information, requires password entry""")
 
 
 def display_info():

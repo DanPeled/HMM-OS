@@ -9,7 +9,8 @@ import psutil
 import pyautogui as pg
 from colorama import Fore, Style
 
-#Functions
+
+# Functions
 def find_password():
     print(f"USERNAME : {open('user/username.txt').read()} PASSWORD : {open('user/password.txt').read()}")
 
@@ -60,6 +61,7 @@ def desktop():  # Desktop command
     pg.keyUp('win')
 
 
+# Open#
 def open_app(program_to_open):  # Open APP command
     pg.press('win')
     pg.typewrite(program_to_open)

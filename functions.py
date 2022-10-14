@@ -9,7 +9,7 @@ import psutil
 import pyautogui as pg
 from colorama import Fore, Style
 
-
+#Functions
 def find_password():
     print(f"USERNAME : {open('user/username.txt').read()} PASSWORD : {open('user/password.txt').read()}")
 

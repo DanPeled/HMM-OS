@@ -144,18 +144,21 @@ def help_c():  # Help Command
 
 def display_info():
     while True:
-        b_login = input('enter your password to see bios')
+        b_login = input('Enter your password to see BIOS: ')
         if b_login == open('user/password.txt').read():
             print('Opening BIOS')
             host_name = socket.gethostname()
             host_ip = socket.gethostbyname(host_name)
-            print(f'[1] USERNAME : {open("user/username.txt").read()}\n'
-                  f'[2] PASSWORD : {open("user/password.txt").read()}\n'
+            print(f'USERNAME : {open("user/username.txt").read()}\n'
+                  f'PASSWORD : {open("user/password.txt").read()}\n'
                   f'HOST NAME : {host_name}\n'
                   f'LOCAL IPS : {host_ip}')
             break
         else:
-            continue
+            if b_login == 'exit' or b_login == 'leave' or b_login == 'back':
+                break
+            else:
+                continue
 
 
 def _color(color, text: str = '') -> str:  # Terminal set color command

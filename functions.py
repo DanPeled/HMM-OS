@@ -142,7 +142,8 @@ def help_c():  # Help Command
           -> revprint <text> - prints a text backwards
           -> ASCII revprint <text> - print a text backwards in ASCII
           -> date - returns the current date
-          -> time - returns the current time""")
+          -> time - returns the current time
+          -> file - opens a file explorer to choose a file to open from""")
 
 
 def _color(color, text: str = '') -> str:  # Terminal set color command

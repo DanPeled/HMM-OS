@@ -129,7 +129,7 @@ def date():
 
 def help_c():  # Help Command
     print(f'{pyfiglet.figlet_format("HELP")}\n',
-          """-> website / enter a website <website domain> - enters a website of your choice
+          """         -> website / enter a website <website domain> - enters a website of your choice
           -> open <app name> - opens a app of your choice
           -> help - opens list of commands
           -> desk / desktop - opens your desktop
@@ -140,7 +140,9 @@ def help_c():  # Help Command
           -> print <text> - prints a text in ASCII
           -> battery - shows your battery percentage
           -> revprint <text> - prints a text backwards
-          -> ASCII revprint <text> - print a text backwards in ASCII'""")
+          -> ASCII revprint <text> - print a text backwards in ASCII
+          -> date - returns the current date
+          -> time - returns the current time""")
 
 
 def _color(color, text: str = '') -> str:  # Terminal set color command

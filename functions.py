@@ -171,6 +171,7 @@ def display_info():
                 print("Restart OS to confirm.")
                 break
             if b == '3':
+                print('Leaving BIOS')
                 break
         else:
             if b_login == 'exit' or b_login == 'leave' or b_login == 'back':

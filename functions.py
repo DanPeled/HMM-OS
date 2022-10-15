@@ -184,6 +184,7 @@ def _color(color, text: str = '') -> str:  # Terminal set color command
     return f'{color}{text}{Style.RESET_ALL}'
 
 
+# noinspection PyUnreachableCode
 def snake():
     color_list = [
         'gold',

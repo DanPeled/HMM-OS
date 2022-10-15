@@ -14,6 +14,8 @@ from tkinter import filedialog
 import os
 
 
+# Code #
+
 def files():
     def openFile():
         filepath = filedialog.askopenfilename(initialdir="/",

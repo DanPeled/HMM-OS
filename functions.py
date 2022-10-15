@@ -153,7 +153,23 @@ def display_info():
                   f'PASSWORD : {open("user/password.txt").read()}\n'
                   f'HOST NAME : {host_name}\n'
                   f'LOCAL IPS : {host_ip}')
-            break
+            b = input('[1] Change username.\n[2] Change password.\n[3] Go back\n[?] : ')
+            if b == '2':
+                edit_p = input("Enter new password : ")
+                with open('user/password.txt', 'w') as f:
+                    f.writelines(edit_p)
+                print(f'Password changed to - {edit_p}')
+                print("Restart OS to confirm")
+                break
+            if b == '1':
+                edit_n = input("Enter new username : ")
+                with open('user/username.txt', 'w') as f:
+                    f.writelines(edit_n)
+                print(f'Username changed to - {edit_n}')
+                print("Restart OS to confirm.")
+                break
+            if b == '3':
+                break
         else:
             if b_login == 'exit' or b_login == 'leave' or b_login == 'back':
                 break

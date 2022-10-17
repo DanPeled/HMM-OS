@@ -18,7 +18,7 @@ import webbrowser as wb
 # Code #
 def camera_ASCII():
     wb.open('https://danpeled.github.io/camera_to_ASCII/', 0)
-    print(f'Opening https://danpeled.github.io/camera_to_ASCII/'
+    print(f'Opening https://danpeled.github.io/camera_to_ASCII/')
 
 
 def files():

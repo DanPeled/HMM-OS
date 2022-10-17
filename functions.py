@@ -12,9 +12,14 @@ from colorama import Fore, Style
 from tkinter import *
 from tkinter import filedialog
 import os
+import webbrowser as wb
 
 
 # Code #
+def camera_ASCII():
+    wb.open('https://danpeled.github.io/camera_to_ASCII/', 0)
+    print(f'Opening https://danpeled.github.io/camera_to_ASCII/'
+
 
 def files():
     def openFile():
@@ -113,7 +118,6 @@ def re_print(text):
 
 
 def ASCII_re_print(text):
-    ##
     print(pyfiglet.figlet_format(text[::-1]))
 
 
@@ -141,7 +145,8 @@ def help_c():  # Help Command
     [12] date - returns the current date
     [13] time - returns the current time
     [14] file - opens a file explorer to choose a file to open from
-    [15] BIOS - displays the user information, requires password entry""")
+    [15] BIOS - displays the user information, requires password entry
+    [16] camera ASCII - opens a webpage of camera to ASCII""")
 
 
 def display_info():
@@ -451,6 +456,8 @@ def check_for_answers():
         date()
     elif what_to_do == 'file':
         files()
+    elif what_to_do == 'camera ASCII':
+        camera_ASCII()
     else:
         if check_for_errors(what_to_do) is None:
             print("You have used an un existing  statement, use help for list of commands")

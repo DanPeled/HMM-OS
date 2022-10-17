@@ -138,7 +138,7 @@ def roll_dice():
 
 
 def help_c():  # Help Command
-    print(f'{pyfiglet.figlet_format("HELP")}\n',
+    print(f'{pyfiglet.figlet_format("   HELP")}\n',
           """   [1] website / enter a website <website domain> - enters a website of your choice
     [2] open <app name> - opens a app of your choice
     [3] help - opens list of commands

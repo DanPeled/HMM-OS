@@ -26,6 +26,7 @@ Steps to start :<br/>
     [14] file - opens a file explorer to choose a file to open from
     [15] BIOS - displays the user information, requires password entry
     [16] camera ASCII - opens a webpage of camera to ASCII
+    [17] dice - gives a random number between a chosen min and max
 # Explanation of files
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and handling responses.<br/>
 <a href = "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/home.py">home.py</a> - main home screen.

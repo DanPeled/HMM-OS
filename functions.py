@@ -129,6 +129,14 @@ def date():
     print(datetime.now().strftime("%Y-%m-%d"))
 
 
+def roll_dice():
+    start = input('Choose a min number : ')
+    end = input('Choose a max number : ')
+    end = int(end)
+    start = int(start)
+    print(f'Dice result - {random.randint(start, end)}')
+
+
 def help_c():  # Help Command
     print(f'{pyfiglet.figlet_format("HELP")}\n',
           """   [1] website / enter a website <website domain> - enters a website of your choice
@@ -146,7 +154,8 @@ def help_c():  # Help Command
     [13] time - returns the current time
     [14] file - opens a file explorer to choose a file to open from
     [15] BIOS - displays the user information, requires password entry
-    [16] camera ASCII - opens a webpage of camera to ASCII""")
+    [16] camera ASCII - opens a webpage of camera to ASCII
+    [17] dice - gives a random number between a chosen min and max""")
 
 
 def display_info():
@@ -458,6 +467,8 @@ def check_for_answers():
         files()
     elif what_to_do == 'camera ASCII':
         camera_ASCII()
+    elif what_to_do == 'dice':
+        roll_dice()
     else:
         if check_for_errors(what_to_do) is None:
             print("You have used an un existing  statement, use help for list of commands")

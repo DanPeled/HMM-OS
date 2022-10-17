@@ -5,9 +5,7 @@ Steps to start :<br/>
 
     1.Create a user.
     2.Choose a password, every space and small thing in the password matters.
-    3.Login using your password.
-  
-  
+    3.Login using your password. 
 # Commands
 
     [1] website / enter a website <website domain> - enters a website of your choice

@@ -55,16 +55,7 @@ def battery_get():
 
 
 def enter_google(website):
-    pg.press("win")
-    t.sleep(0.1)
-    pg.typewrite("google")
-    t.sleep(0.1)
-    pg.press("enter")
-    t.sleep(0.1)
-
-    t.sleep(0.1)
-    pg.typewrite(f"https://{website}")
-    pg.press("enter")
+    wb.open(f"https://{website}")
 
 
 def shut_down():

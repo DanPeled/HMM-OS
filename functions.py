@@ -417,6 +417,8 @@ def check_for_errors(what_to_do):
 
 
 def calculator(inserted: str = ''):
+    if '^' in inserted:
+        inserted = inserted.replace("^", '**')
     result = eval(inserted)
     if '**' in inserted:
         inserted = inserted.replace("**", "^")

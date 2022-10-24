@@ -417,9 +417,10 @@ def check_for_errors(what_to_do):
 
 
 def calculator(inserted: str = ''):
+    result = eval(inserted)
     if '**' in inserted:
-        inserted.replace("**", "^")
-    print(f'{inserted} = {eval(inserted)}')
+        inserted = inserted.replace("**", "^")
+    print(f'{inserted} = {result}')
 
 
 def check_for_answers():

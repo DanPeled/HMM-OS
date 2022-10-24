@@ -13,6 +13,7 @@ from tkinter import *
 from tkinter import filedialog
 import os
 import webbrowser as wb
+import calendar
 
 
 # Code #
@@ -416,6 +417,10 @@ def check_for_errors(what_to_do):
         return None
 
 
+def caland(year):
+    print(calendar.calendar(year))
+
+
 def calculator(inserted: str = ''):
     if '^' in inserted:
         inserted = inserted.replace("^", '**')
@@ -474,6 +479,8 @@ def check_for_answers():
         camera_ASCII()
     elif what_to_do == 'dice':
         roll_dice()
+    elif what_to_do.startswith('cald '):
+        caland(int(what_to_do[5:]))
     else:
         if check_for_errors(what_to_do) is None:
             print("You have used an un existing  statement, use help for list of commands")

@@ -20,8 +20,10 @@ def run():
     print("The date & time is : ")
     print(datetime.now().time().strftime("%H:%M:%S"))
     print(datetime.now().strftime("%Y-%m-%d"))
-
-    print(f"Battery level - {battery.percent}%")
+    if battery is None:
+        pass
+    else:
+        print(f"Battery level - {battery.percent}%")
     print("""
     """)
     fu.check_for_answers()

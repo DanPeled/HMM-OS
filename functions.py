@@ -8,12 +8,13 @@ import turtle
 import pyfiglet
 import psutil
 import pyautogui as pg
-from colorama import Fore, Style
 from tkinter import *
 from tkinter import filedialog
 import os
 import webbrowser as wb
 import calendar
+
+digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 # Code #
@@ -89,10 +90,10 @@ def _printASCII(text):
 def generate_password():
     # define the alphabet
     letters = string.ascii_letters
-    digits = string.digits
+    _digits = string.digits
     special_chars = string.punctuation
 
-    alphabet = letters + digits + special_chars
+    alphabet = letters + _digits + special_chars
 
     # fix password length
     pwd_length = 12
@@ -147,7 +148,8 @@ def help_c():  # Help Command
     [14] file - opens a file explorer to choose a file to open from
     [15] BIOS - displays the user information, requires password entry
     [16] camera ASCII - opens a webpage of camera to ASCII
-    [17] dice - gives a random number between a chosen min and max""")
+    [17] dice - gives a random number between a chosen min and max
+    [18] cald <year> - return a calendar of a chosen year""")
 
 
 def display_info():
@@ -184,10 +186,6 @@ def display_info():
                 break
             else:
                 continue
-
-
-def _color(color, text: str = '') -> str:  # Terminal set color command
-    return f'{color}{text}{Style.RESET_ALL}'
 
 
 # noinspection PyUnreachableCode
@@ -404,6 +402,8 @@ def check_for_errors(what_to_do):
         return 'The right usage is \"open <app name>\"'
     elif what_to_do.lower() == 'website' or what_to_do.lower() == 'enter a website':
         return f'The right usage is \"{what_to_do.lower()} <website domain without \"https://\">\"'
+    if what_to_do.startswith('cald') and what_to_do[5:] not in digits:
+        return f"{what_to_do[5:]} is not a valid number, try again"
     else:
         return None
 
@@ -422,7 +422,6 @@ def calculator(inserted: str = ''):
 
 
 def check_for_answers():
-    digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     what_to_do = input('[?] : ')
     if what_to_do.lower().startswith('enter a website ') or what_to_do.lower().startswith('website '):
         if what_to_do.lower().startswith('website '):
@@ -471,10 +470,13 @@ def check_for_answers():
     elif what_to_do == 'dice':
         roll_dice()
     elif what_to_do.startswith('cald '):
-        caland(int(what_to_do[5:]))
+        try:
+            caland(int(what_to_do[5:]))
+        except:
+            print(check_for_errors(what_to_do))
     else:
         if check_for_errors(what_to_do) is None:
             print("You have used an un existing  statement, use help for list of commands")
         else:
-            print(_color(Fore.RED, check_for_errors(what_to_do)))
+            print(check_for_errors(what_to_do))
     check_for_answers()

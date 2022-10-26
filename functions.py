@@ -438,7 +438,7 @@ def check_for_answers():
     what_to_do = input('[?] : ')
     if what_to_do.lower().startswith('enter a website ') or what_to_do.lower().startswith('website '):
         if what_to_do.lower().startswith('website '):
-            print(f'Opening {what_to_do[8:]} on google')
+            print(f'Opening {what_to_do[8:]} on the web')
             enter_google(what_to_do[8:])
         elif what_to_do.lower().startswith('enter a website '):
             print(f'Opening {what_to_do[16:]} on google')

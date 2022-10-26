@@ -413,12 +413,15 @@ def caland(year):
 
 
 def calculator(inserted: str = ''):
-    if '^' in inserted:
-        inserted = inserted.replace("^", '**')
-    result = eval(inserted)
-    if '**' in inserted:
-        inserted = inserted.replace("**", "^")
-    print(f'{inserted} = {result}')
+    if inserted in digits:
+        if '^' in inserted:
+            inserted = inserted.replace("^", '**')
+        result = eval(inserted)
+        if '**' in inserted:
+            inserted = inserted.replace("**", "^")
+        print(f'{inserted} = {result}')
+    else:
+        print(f'{inserted} Is an invalid math expression, try again')
 
 
 def check_for_answers():

@@ -403,9 +403,19 @@ def check_for_errors(what_to_do):
     elif what_to_do.lower() == 'website' or what_to_do.lower() == 'enter a website':
         return f'The right usage is \"{what_to_do.lower()} <website domain without \"https://\">\"'
     if what_to_do.startswith('cald') and what_to_do[5:] not in digits:
-        return f"{what_to_do[5:]} is not a valid number, try again"
+        return f"\"{what_to_do[5:]}\" is not a valid number, try again"
     else:
         return None
+
+
+def calculate_age():
+    try:
+        name = input('Enter a name : ')
+        born = int(input(f"Enter the year {name} was born at : "))
+        current_year = int(input('Enter the current year : '))
+        print(f'{name} is {current_year - born} years old')
+    except:
+        print('Something went wrong, try again')
 
 
 def caland(year):
@@ -413,15 +423,15 @@ def caland(year):
 
 
 def calculator(inserted: str = ''):
-    if inserted in digits:
+    try:
         if '^' in inserted:
             inserted = inserted.replace("^", '**')
         result = eval(inserted)
         if '**' in inserted:
             inserted = inserted.replace("**", "^")
         print(f'{inserted} = {result}')
-    else:
-        print(f'{inserted} Is an invalid math expression, try again')
+    except:
+        print(f"{inserted} Is an invalid math expression, try again.")
 
 
 def check_for_answers():
@@ -448,6 +458,8 @@ def check_for_answers():
         help_c()
     elif what_to_do == 'snake':
         snake()
+    elif what_to_do == 'calc age':
+        calculate_age()
     elif what_to_do == 'generate password':
         generate_password()
     elif what_to_do[0] in str(digits):

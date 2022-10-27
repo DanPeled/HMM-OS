@@ -29,3 +29,6 @@ Steps to start :<br/>
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and handling responses.<br/>
 <a href = "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/home.py">home.py</a> - main home screen.</br>
 <a href = "https://github.com/DanPeld/HMM-OS/blob/Hmmm_OS/entry.py">entry.py</a> - entry function for code.
+# Future Ideas 
+Event creation and management.</br>
+Messaging between users.</br>

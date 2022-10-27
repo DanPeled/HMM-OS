@@ -19,7 +19,7 @@ def run():
 ██╔══██║██║╚██╔╝██║██║╚██╔╝██║  ██║░░██║░╚═══██╗
 ██║░░██║██║░╚═╝░██║██║░╚═╝░██║  ╚█████╔╝██████╔╝
 ╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░░░░╚═╝  ░╚════╝░╚═════╝░""")
-    print(f"WELCOME {l_n}")
+    print(f"WELCOME {l_n.title()}")
     print("The date & time is : ")
     print(datetime.now().time().strftime("%H:%M:%S"))
     print(datetime.now().strftime("%Y-%m-%d"))

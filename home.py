@@ -27,7 +27,7 @@ def run():
         device_type = 'Desktop'
     else:
         device_type = 'Laptop'
-        print(f"Battery level - {battery.percent}%\nLogged in on a {device_type} - {platform.system()}")
+        print(f"Battery level - {battery.percent}%\nLogged in on a {platform.system()} {device_type}")
     print("""
     """)
     fu.check_for_answers()

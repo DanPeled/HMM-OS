@@ -3,6 +3,9 @@ import os
 import functions as fu
 import psutil
 from datetime import datetime
+import platform
+
+device_type = None
 
 
 def run():
@@ -21,9 +24,10 @@ def run():
     print(datetime.now().time().strftime("%H:%M:%S"))
     print(datetime.now().strftime("%Y-%m-%d"))
     if battery is None:
-        pass
+        device_type = 'Desktop'
     else:
-        print(f"Battery level - {battery.percent}%")
+        device_type = 'Laptop'
+        print(f"Battery level - {battery.percent}%\nLogged in on a {device_type} - {platform.system()} {platform.release()}")
     print("""
     """)
     fu.check_for_answers()

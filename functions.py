@@ -84,7 +84,7 @@ def open_app(program_to_open):  # Open APP command
 
 
 def _printASCII(text):
-    print(pyfiglet.figlet_format(text))
+    print(text)
 
 
 def generate_password():
@@ -110,8 +110,7 @@ def re_print(text):
     print(text[::-1])
 
 
-def ASCII_re_print(text):
-    print(pyfiglet.figlet_format(text[::-1]))
+
 
 
 def time():
@@ -131,7 +130,7 @@ def roll_dice():
 
 
 def help_c():  # Help Command
-    print(f'{pyfiglet.figlet_format("   HELP")}\n',
+    print(f'Help:\n',
           """   [1] website / enter a website <website domain> - enters a website of your choice
     [2] open <app name> - opens a app of your choice
     [3] help - opens list of commands
@@ -142,14 +141,13 @@ def help_c():  # Help Command
     [8] print <text> - prints a text in ASCII
     [9] battery - shows your battery percentage
     [10] revprint <text> - prints a text backwards
-    [11] ASCII revprint <text> - print a text backwards in ASCII
-    [12] date - returns the current date
-    [13] time - returns the current time
-    [14] file - opens a file explorer to choose a file to open from
-    [15] BIOS - displays the user information, requires password entry
-    [16] camera ASCII - opens a webpage of camera to ASCII
-    [17] dice - gives a random number between a chosen min and max
-    [18] cald <year> - return a calendar of a chosen year""")
+    [11] date - returns the current date
+    [12] time - returns the current time
+    [13] file - opens a file explorer to choose a file to open from
+    [14] BIOS - displays the user information, requires password entry
+    [15] camera ASCII - opens a webpage of camera to ASCII
+    [16] dice - gives a random number between a chosen min and max
+    [17] cald <year> - return a calendar of a chosen year""")
 
 
 def display_info():
@@ -469,8 +467,6 @@ def check_for_answers():
             display_info()
         elif what_to_do.startswith('print '):
             _printASCII(what_to_do[6:])
-        elif what_to_do.startswith('ASCII revprint '):
-            ASCII_re_print(what_to_do[15:])
         elif what_to_do == 'battery':
             battery_get()
         elif what_to_do.startswith('revprint '):

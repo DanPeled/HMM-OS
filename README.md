@@ -18,14 +18,13 @@ Steps to start :<br/>
     [8] print <text> - prints a text in ASCII
     [9] battery - shows your battery percentage
     [10] revprint <text> - prints a text backwards
-    [11] ASCII revprint <text> - print a text backwards in ASCII
-    [12] date - returns the current date
-    [13] time - returns the current time
-    [14] file - opens a file explorer to choose a file to open from
-    [15] BIOS - displays the user information, requires password entry
-    [16] camera ASCII - opens a webpage of camera to ASCII
-    [17] dice - gives a random number between a chosen min and max
-    [18] cald <year> - return a calendar of a chosen year
+    [11] date - returns the current date
+    [12] time - returns the current time
+    [13] file - opens a file explorer to choose a file to open from
+    [14] BIOS - displays the user information, requires password entry
+    [15] camera ASCII - opens a webpage of camera to ASCII
+    [16] dice - gives a random number between a chosen min and max
+    [17] cald <year> - return a calendar of a chosen year
 # Explanation of files
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and handling responses.<br/>
 <a href = "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/home.py">home.py</a> - main home screen.</br>

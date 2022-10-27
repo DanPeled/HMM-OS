@@ -435,63 +435,66 @@ def calculator(inserted: str = ''):
 
 
 def check_for_answers():
-    what_to_do = input('[?] : ')
-    if what_to_do.lower().startswith('enter a website ') or what_to_do.lower().startswith('website '):
-        if what_to_do.lower().startswith('website '):
-            print(f'Opening {what_to_do[8:]} on the web')
-            enter_google(what_to_do[8:])
-        elif what_to_do.lower().startswith('enter a website '):
-            print(f'Opening {what_to_do[16:]} on google')
-            enter_google(what_to_do[16:])
-    elif what_to_do.lower() == 'shut down' or what_to_do.lower() == 'power off' or what_to_do == 'power':
-        print(f'shutting off...')
-        shut_down()
-    elif what_to_do.lower() == 'desk' or what_to_do.lower() == 'desktop':
-        print(f'Opening desktop')
-        desktop()
-    elif what_to_do == 'leave':
-        leave()
-    elif what_to_do.lower().startswith('open '):
-        print(f'Opening {what_to_do[5].capitalize() + what_to_do[6:]}')
-        open_app(what_to_do[5:])
-    elif what_to_do == 'help':
-        help_c()
-    elif what_to_do == 'snake':
-        snake()
-    elif what_to_do == 'calc age':
-        calculate_age()
-    elif what_to_do == 'generate password':
-        generate_password()
-    elif what_to_do[0] in str(digits):
-        calculator(what_to_do)
-    elif what_to_do == 'BIOS':
-        display_info()
-    elif what_to_do.startswith('print '):
-        _printASCII(what_to_do[6:])
-    elif what_to_do.startswith('ASCII revprint '):
-        ASCII_re_print(what_to_do[15:])
-    elif what_to_do == 'battery':
-        battery_get()
-    elif what_to_do.startswith('revprint '):
-        re_print(what_to_do[9:])
-    elif what_to_do == 'time':
-        time()
-    elif what_to_do == 'date':
-        date()
-    elif what_to_do == 'file':
-        files()
-    elif what_to_do == 'camera ASCII':
-        camera_ASCII()
-    elif what_to_do == 'dice':
-        roll_dice()
-    elif what_to_do.startswith('cald '):
-        try:
-            caland(int(what_to_do[5:]))
-        except:
-            print(check_for_errors(what_to_do))
-    else:
-        if check_for_errors(what_to_do) is None:
-            print("You have used an un existing  statement, use help for list of commands")
+    try:
+        what_to_do = input('[?] : ')
+        if what_to_do.lower().startswith('enter a website ') or what_to_do.lower().startswith('website '):
+            if what_to_do.lower().startswith('website '):
+                print(f'Opening {what_to_do[8:]} on the web')
+                enter_google(what_to_do[8:])
+            elif what_to_do.lower().startswith('enter a website '):
+                print(f'Opening {what_to_do[16:]} on google')
+                enter_google(what_to_do[16:])
+        elif what_to_do.lower() == 'shut down' or what_to_do.lower() == 'power off' or what_to_do == 'power':
+            print(f'shutting off...')
+            shut_down()
+        elif what_to_do.lower() == 'desk' or what_to_do.lower() == 'desktop':
+            print(f'Opening desktop')
+            desktop()
+        elif what_to_do == 'leave':
+            leave()
+        elif what_to_do.lower().startswith('open '):
+            print(f'Opening {what_to_do[5].capitalize() + what_to_do[6:]}')
+            open_app(what_to_do[5:])
+        elif what_to_do == 'help':
+            help_c()
+        elif what_to_do == 'snake':
+            snake()
+        elif what_to_do == 'calc age':
+            calculate_age()
+        elif what_to_do == 'generate password':
+            generate_password()
+        elif what_to_do[0] in str(digits):
+            calculator(what_to_do)
+        elif what_to_do == 'BIOS':
+            display_info()
+        elif what_to_do.startswith('print '):
+            _printASCII(what_to_do[6:])
+        elif what_to_do.startswith('ASCII revprint '):
+            ASCII_re_print(what_to_do[15:])
+        elif what_to_do == 'battery':
+            battery_get()
+        elif what_to_do.startswith('revprint '):
+            re_print(what_to_do[9:])
+        elif what_to_do == 'time':
+            time()
+        elif what_to_do == 'date':
+            date()
+        elif what_to_do == 'file':
+            files()
+        elif what_to_do == 'camera ASCII':
+            camera_ASCII()
+        elif what_to_do == 'dice':
+            roll_dice()
+        elif what_to_do.startswith('cald '):
+            try:
+                caland(int(what_to_do[5:]))
+            except:
+                print(check_for_errors(what_to_do))
         else:
-            print(check_for_errors(what_to_do))
-    check_for_answers()
+            if check_for_errors(what_to_do) is None:
+                print("You have used an un existing statement, use help for list of commands")
+            else:
+                print(check_for_errors(what_to_do))
+        check_for_answers()
+    except:
+        check_for_answers()

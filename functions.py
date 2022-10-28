@@ -149,23 +149,26 @@ def help_c():  # Help Command
 
 
 def create_event():
-    try:
-        name = input('Choose a event name : ')
-        description = input('Choose a event description : ')
-        start = type(datetime.now().strftime("%Y.%m.%d"))(input('Enter a start date (format - Y.M.D) - '))
-        end = type(datetime.now().strftime("%Y.%m.%d"))(input('Enter a end date (format - Y.M.D) - '))
-        print(
-            f'Event name - {name}\nDescription - {description}\nStart - {start}\nEnd - {end}')
-        check = input("Is That Correct?\n[N] No\n[Y] Yes\n[?] : ")
-        if check.lower() == 'y':
-            print(f'Event - {name} Have Been Created!')
-        elif check.lower() == 'n':
-            print('Resetting Answers...')
-            create_event()
-
-
-    except:
-        print('Invalid Input, try again...')
+    name = input('Choose a event name : ')
+    description = input('Choose a event description : ')
+    start = type(datetime.now().strftime("%Y.%m.%d"))(input('Enter a start date (format - Y.M.D) - '))
+    end = type(datetime.now().strftime("%Y.%m.%d"))(input('Enter a end date (format - Y.M.D) - '))
+    print(
+        f'Event name - {name}\nDescription - {description}\nStart - {start}\nEnd - {end}')
+    check = input("Is That Correct?\n[N] No\n[Y] Yes\n[?] : ")
+    if check.lower() == 'y':
+        print(f'Event - {name} Have Been Created!')
+        with open(f'events/{name}.txt', 'a') as f:
+            f.write(f"""name => {name}
+description => {description}
+starts on => {start}
+ends on => {end}""")
+            f.close()
+        with open('events/event list.txt', 'a') as f:
+            f.write(f"\n{name}")
+    elif check.lower() == 'n':
+        print('Resetting Answers...')
+        create_event()
 
 
 def display_info():
@@ -413,6 +416,15 @@ def snake():
     wn.mainloop()
 
 
+def event_list():
+    with open('events/event list.txt') as f:
+        read = f.readlines()
+        for event in read:
+            print(event)
+            with open(f'events/{event}.txt') as file:
+                print(file.readlines())
+
+
 def check_for_errors(what_to_do):
     if what_to_do == 'open':
         return 'The right usage is \"open <app name>\"'
@@ -511,7 +523,7 @@ def check_for_answers():
             if what_to_do == 'event -create':
                 create_event()
             elif what_to_do == 'event -list':
-                pass
+                event_list()
 
         else:
             if check_for_errors(what_to_do) is None:

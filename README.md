@@ -27,6 +27,7 @@ Steps to start :<br/>
     [15] camera ASCII - opens a webpage of camera to ASCII
     [16] dice - gives a random number between a chosen min and max
     [17] cald <year> - return a calendar of a chosen year
+    [18] event create - creates a event, now just a prototype.
 
 # Explanation of files
 
@@ -39,17 +40,3 @@ handling responses.<br/>
 
 Event creation and management.</br>
 Messaging between users.</br>
-
-# Versions
-
-# 0.5 <hr>
-
-Removed -</br>
-
-        1.print function.
-        2.revprint ASCII function.
-Added -
-
-        Prototype for event creation (Image bellow).
-<img src = "README FILES/0.5 Event Creation Prototype IMG.png">
-

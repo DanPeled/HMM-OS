@@ -420,6 +420,9 @@ def check_for_errors(what_to_do):
         return f'The right usage is \"{what_to_do.lower()} <website domain without \"https://\">\"'
     if what_to_do.startswith('cald') and what_to_do[5:] not in digits:
         return f"\"{what_to_do[5:]}\" is not a valid number, try again"
+    if what_to_do.startswith('event'):
+        if what_to_do != 'event -list' and what_to_do != 'event -create':
+            return f"Incorrect usage, the correct usage is :\n[1] event -list\n[2] event -create"
     else:
         return None
 
@@ -505,8 +508,11 @@ def check_for_answers():
             except:
                 print(check_for_errors(what_to_do))
         elif what_to_do.startswith('event '):
-            if what_to_do == 'event create':
+            if what_to_do == 'event -create':
                 create_event()
+            elif what_to_do == 'event -list':
+                pass
+
         else:
             if check_for_errors(what_to_do) is None:
                 print("You have used an un existing statement, use help for list of commands")

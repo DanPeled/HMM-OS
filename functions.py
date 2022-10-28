@@ -1,18 +1,18 @@
+import calendar
+import os
 import random
 import secrets
-import string
-from datetime import datetime
-import time as t  # IMPORTS#
 import socket
+import string
+import time as t  # IMPORTS#
 import turtle
-import pyfiglet
-import psutil
-import pyautogui as pg
+import webbrowser as wb
+from datetime import datetime
 from tkinter import *
 from tkinter import filedialog
-import os
-import webbrowser as wb
-import calendar
+
+import psutil
+import pyautogui as pg
 
 digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -110,9 +110,6 @@ def re_print(text):
     print(text[::-1])
 
 
-
-
-
 def time():
     print(datetime.now().time().strftime("%H:%M:%S"))
 
@@ -148,6 +145,26 @@ def help_c():  # Help Command
     [15] camera ASCII - opens a webpage of camera to ASCII
     [16] dice - gives a random number between a chosen min and max
     [17] cald <year> - return a calendar of a chosen year""")
+
+
+def create_event():
+    try:
+        name = input('Choose a event name : ')
+        description = input('Choose a event description : ')
+        start = type(datetime.now().strftime("%Y.%m.%d"))(input('Enter a start date (format - Y.M.D) - '))
+        end = type(datetime.now().strftime("%Y.%m.%d"))(input('Enter a end date (format - Y.M.D) - '))
+        print(
+            f'Event name - {name}\nDescription - {description}\nStart - {start}\nEnd - {end}')
+        check = input("Is That Correct?\n[N] No\n[Y] Yes\n[?] : ")
+        if check.lower() == 'y':
+            print(f'Event - {name} Have Been Created!')
+        elif check.lower() == 'n':
+            print('Resetting Answers...')
+            create_event()
+
+
+    except:
+        print('Invalid Input, try again...')
 
 
 def display_info():
@@ -486,6 +503,9 @@ def check_for_answers():
                 caland(int(what_to_do[5:]))
             except:
                 print(check_for_errors(what_to_do))
+        elif what_to_do.startswith('event '):
+            if what_to_do == 'event create':
+                create_event()
         else:
             if check_for_errors(what_to_do) is None:
                 print("You have used an un existing statement, use help for list of commands")

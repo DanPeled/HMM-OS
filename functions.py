@@ -529,7 +529,7 @@ def check_for_answers():
             elif what_to_do == 'event -list':
                 event_list()
             else:
-                print('Incorrect usage')
+                print("Incorrect usage, the correct usage is :\n[1] event -list\n[2] event -create")
 
         else:
             if check_for_errors(what_to_do) is None:

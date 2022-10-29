@@ -1,4 +1,0 @@
-name => hmm
-description => hmm
-starts on => 2022.17.2
-ends on => 2022.17.2

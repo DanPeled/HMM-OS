@@ -159,13 +159,13 @@ def create_event():
     if check.lower() == 'y':
         print(f'Event - {name} Have Been Created!')
         with open(f'events/{name}.txt', 'a') as f:
-            f.write(f"""name => {name}
-description => {description}
-starts on => {start}
-ends on => {end}""")
+            f.write(f"""{name} : 
+    {description}
+    starts on - {start}
+    ends on - {end}""")
             f.close()
         with open('events/event list.txt', 'a') as f:
-            f.write(f"\n{name}")
+            f.write(f"{name},")
     elif check.lower() == 'n':
         print('Resetting Answers...')
         create_event()
@@ -419,10 +419,12 @@ def snake():
 def event_list():
     with open('events/event list.txt') as f:
         read = f.read().split(',')
+        i = 1
         for event in read:
-            print(event)
             with open(f'events/{event}.txt') as file:
-                print(file.readlines())
+                current_event = file.read()
+                print(f'{i}.', f'{current_event}')
+            i += 1
 
 
 def check_for_errors(what_to_do):

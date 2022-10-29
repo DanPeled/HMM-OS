@@ -418,7 +418,7 @@ def snake():
 
 def event_list():
     with open('events/event list.txt') as f:
-        read = f.readlines()
+        read = f.read().split(',')
         for event in read:
             print(event)
             with open(f'events/{event}.txt') as file:

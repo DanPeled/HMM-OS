@@ -28,8 +28,7 @@ Steps to start :<br/>
     [16] dice - gives a random number between a chosen min and max
     [17] cald <year> - return a calendar of a chosen year
     [18] event -create - creates a event, now just a prototype.
-    [19] event -list - returns a list of exitsing events
-
+    [19] event -list - returns a list of existing events
 # Explanation of files
 
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and

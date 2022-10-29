@@ -27,7 +27,8 @@ Steps to start :<br/>
     [15] camera ASCII - opens a webpage of camera to ASCII
     [16] dice - gives a random number between a chosen min and max
     [17] cald <year> - return a calendar of a chosen year
-    [18] event create - creates a event, now just a prototype.
+    [18] event -create - creates a event, now just a prototype.
+    [19] event -list - returns a list of exitsing events
 
 # Explanation of files
 

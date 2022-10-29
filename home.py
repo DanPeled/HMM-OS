@@ -5,10 +5,11 @@ import psutil
 
 import functions as fu
 
-device_type = None
+global device_type
 
 
 def run():
+    global device_type
     battery = psutil.sensors_battery()
     login_name = open('user/username.txt')
     l_n = login_name.read()

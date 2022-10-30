@@ -10,7 +10,7 @@ import webbrowser as wb
 from datetime import datetime
 from tkinter import *
 from tkinter import filedialog
-
+import event_functions as efu
 import psutil
 import pyautogui as pg
 
@@ -140,7 +140,6 @@ def help_c():  # Help Command
     [10] revprint <text> - prints a text backwards
     [11] date - returns the current date
     [12] time - returns the current time
-    [13] file - opens a file explorer to choose a file to open from
     [14] BIOS - displays the user information, requires password entry
     [15] camera ASCII - opens a webpage of camera to ASCII
     [16] dice - gives a random number between a chosen min and max
@@ -471,6 +470,7 @@ def calculator(inserted: str = ''):
 
 def check_for_answers():
     try:
+        efu.check_for_events()
         what_to_do = input('[?] : ')
         if what_to_do.lower().startswith('enter a website ') or what_to_do.lower().startswith('website '):
             if what_to_do.lower().startswith('website '):
@@ -537,5 +537,6 @@ def check_for_answers():
             else:
                 print(check_for_errors(what_to_do))
         check_for_answers()
+
     except:
         check_for_answers()

@@ -1,13 +1,13 @@
 from datetime import datetime as dt
 import time as t
 
-holidays = {'10-30': 'New year'}
+holidays = {'12-31': 'New year'}
 
 
 def check_for_events():
     if dt.now().strftime("%m-%d") in holidays:
         event = holidays[dt.now().strftime("%m-%d")]
-        if event != holidays['10-30']:
+        if event != holidays['12-31']:
             print(f'it is {event}')
         else:
             if dt.now().time().strftime("%H:%M:%S") == dt.now().time().strftime("23:59:55"):

@@ -1,9 +1,8 @@
 # HMM OS
 
 A costume TOS (Terminal Operating System)</br>
-
-    Made on Oct 8th 2022
-Steps to start :<br/>
+Made on Oct 8th 2022
+# Steps to start :<br/>
 
     1.Create a user.
     2.Choose a password, every space and small thing in the password matters.

@@ -1,6 +1,6 @@
 # HMM OS
 
-<span style="color:red">A costume TOS (Terminal Operating System)</span>
+A costume TOS (Terminal Operating System)</br>
 
 Steps to start :<br/>
 

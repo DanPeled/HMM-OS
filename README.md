@@ -1,7 +1,7 @@
 # HMM OS
 
 A costume TOS (Terminal Operating System)</br>
-
+Made on Oct 8th 2022</br>
 Steps to start :<br/>
 
     1.Create a user.

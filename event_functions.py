@@ -1,22 +1,30 @@
-from datetime import datetime as dt
 import time as t
+from datetime import datetime as dt
 
 holidays = {'12-31': 'New year'}
 
 
-def upcoming_month(event, year, month):
-    if dt.now().date().strftime("%Y.%m") == f"{year}.{month}":
-        print(f"{event} is upcoming this month!")
+def upcoming_event(type_, event, year, month, day=None):
+    if type_ == 'm':
+        if dt.now().date().strftime("%Y.%m") == f"{year}.{month}":
+            print(f"{event} is this month!")
+    if type_ == 'd':
+        if dt.now().date().strftime("%Y.%m.%d") == f"{year}.{month}.{day}":
+            print(f"{event} is today!")
 
 
-def check_upcoming():
+def check_upcoming(_type):
     with open('events/event list.txt') as f:
         read = f.read().split(',')
+        read.remove(read[-1])
         for event in read:
             with open(f'events/{event}.txt') as file:
                 current_event = file.readlines()
-                event_date = current_event[2].replace('starts on - ', '').replace(' ', '').split('.')
-                upcoming_month(event=event, year=event_date[0], month=event_date[1])
+                event_date = current_event[2].replace('starts on - ', '').replace(" ", "").split('.')
+                if _type == 'm':
+                    upcoming_event(event=event, year=event_date[0], month=event_date[1], type_=_type)
+                if _type == 'd':
+                    upcoming_event(event=event, year=event_date[0], month=event_date[1], day=event_date[2], type_=_type)
 
 
 def check_for_events():

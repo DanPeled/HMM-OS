@@ -9,7 +9,6 @@ global device_type
 
 
 def run():
-    efu.check_upcoming()
     global device_type
     battery = psutil.sensors_battery()
     login_name = open('user/username.txt')
@@ -32,4 +31,6 @@ def run():
         print(f"Battery level - {battery.percent}%\nLogged in on a {platform.system()} {device_type}")
     print("""
     """)
+    efu.check_upcoming('m')
+    efu.check_upcoming('d')
     fu.check_for_answers()

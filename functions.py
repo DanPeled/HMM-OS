@@ -528,8 +528,11 @@ def check_for_answers():
                 create_event()
             elif what_to_do == 'event -list':
                 event_list()
-            elif what_to_do == 'event -upcoming':
-                efu.check_upcoming()
+            elif what_to_do.startswith('event -upcoming'):
+                if what_to_do == 'event -upcoming -m':
+                    efu.check_upcoming('m')
+                if what_to_do == 'event -upcoming -d':
+                    efu.check_upcoming('d')
             else:
                 print("Incorrect usage, the correct usage is :\n[1] event -list\n[2] event -create")
 

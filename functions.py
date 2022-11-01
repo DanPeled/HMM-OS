@@ -13,7 +13,7 @@ from tkinter import filedialog
 import event_functions as efu
 import psutil
 import pyautogui as pg
-
+import pyfiglet
 digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
@@ -125,7 +125,48 @@ def roll_dice():
     start = int(start)
     print(f'Dice result - {random.randint(start, end)}')
 
-
+def countdown(text):
+    print("""
+    ███████╗
+    ██╔════╝
+    ██████╗░
+    ╚════██╗
+    ██████╔╝
+    ╚═════╝░""")
+    t.sleep(1)
+    print("""
+    ░░██╗██╗
+    ░██╔╝██║
+    ██╔╝░██║
+    ███████║
+    ╚════██║
+    ░░░░░╚═╝""")
+    t.sleep(1)
+    print("""
+    ██████╗░
+    ╚════██╗
+    ░█████╔╝
+    ░╚═══██╗
+    ██████╔╝
+    ╚═════╝░""")
+    t.sleep(1)
+    print("""
+    ██████╗░
+    ╚════██╗
+    ░░███╔═╝
+    ██╔══╝░░
+    ███████╗
+    ╚══════╝""")
+    t.sleep(1)
+    print("""
+    ░░███╗░░
+    ░████║░░
+    ██╔██║░░
+    ╚═╝██║░░
+    ███████╗
+    ╚══════╝""")
+    t.sleep(1)
+    print(pyfiglet.print_figlet(text))
 def help_c():  # Help Command
     print(f'    Help:\n',
           """   [1] website / enter a website <website domain> - enters a website of your choice
@@ -150,6 +191,7 @@ def help_c():  # Help Command
         [A] event -upcoming -m - returns all the events happening in the current month
         [B] event -upcoming -d - returns all the events happening in the current day
     [21] event -delete <event name> - deletes a chosen event
+    [22] countdown <text> - countdown from 5 following the text
 
 """)
 
@@ -513,6 +555,8 @@ def check_for_answers():
             battery_get()
         elif what_to_do.startswith('revprint '):
             re_print(what_to_do[9:])
+        elif what_to_do.startswith('countdown '):
+            countdown(what_to_do[10:])
         elif what_to_do == 'time':
             time()
         elif what_to_do == 'date':

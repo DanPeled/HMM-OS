@@ -32,6 +32,7 @@ Steps to start :<br/>
         [A] event -upcoming -m - returns all the events happening in the current month
         [B] event -upcoming -d - returns all the events happening in the current day
     [21] event -delete <event name> - deletes a chosen event
+    [22] countdown <text> - countdown from 5 following the text
 # Explanation of files
 
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and

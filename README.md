@@ -22,13 +22,16 @@ Steps to start :<br/>
     [10] revprint <text> - prints a text backwards
     [11] date - returns the current date
     [12] time - returns the current time
-    [13] file - opens a file explorer to choose a file to open from
     [14] BIOS - displays the user information, requires password entry
     [15] camera ASCII - opens a webpage of camera to ASCII
     [16] dice - gives a random number between a chosen min and max
     [17] cald <year> - return a calendar of a chosen year
     [18] event -create - creates a event, now just a prototype.
     [19] event -list - returns a list of existing events
+    [20] event -upcoming:
+        [A] event -upcoming -m - returns all the events happening in the current month
+        [B] event -upcoming -d - returns all the events happening in the current day
+    [21] event -delete <event name> - deletes a chosen event
 # Explanation of files
 
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and
@@ -38,5 +41,4 @@ handling responses.<br/>
 
 # Future Ideas
 
-Event creation and management.</br>
 Messaging between users.</br>

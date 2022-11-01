@@ -146,6 +146,11 @@ def help_c():  # Help Command
     [17] cald <year> - return a calendar of a chosen year
     [18] event -create - creates a event, now just a prototype.
     [19] event -list - returns a list of existing events
+    [20] event -upcoming:
+        [A] event -upcoming -m - returns all the events happening in the current month
+        [B] event -upcoming -d - returns all the events happening in the current day
+    [21] event -delete <event name> - deletes a chosen event
+
 """)
 
 

@@ -13,7 +13,7 @@ def upcoming_event(type_, event, year, month, day=None):
     if type_ == 'm':
         if dt.now().date().strftime("%Y.%m") == f"{year}.{month}":
             print(f"{event} is this month!")
-    if type_ == 'd':
+    elif type_ == 'd':
         if dt.now().date().strftime("%Y.%m.%d") == f"{year}.{month}.{day}":
             print(f"{event} is today!")
 

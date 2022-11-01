@@ -14,6 +14,7 @@ import event_functions as efu
 import psutil
 import pyautogui as pg
 import pyfiglet
+
 digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
@@ -125,6 +126,7 @@ def roll_dice():
     start = int(start)
     print(f'Dice result - {random.randint(start, end)}')
 
+
 def countdown(text):
     print("""
     ███████╗
@@ -167,6 +169,8 @@ def countdown(text):
     ╚══════╝""")
     t.sleep(1)
     print(pyfiglet.print_figlet(text))
+
+
 def help_c():  # Help Command
     print(f'    Help:\n',
           """   [1] website / enter a website <website domain> - enters a website of your choice
@@ -215,8 +219,17 @@ def create_event():
         with open('events/event list.txt', 'a') as f:
             f.write(f"{name},")
     elif check.lower() == 'n':
-        print('Resetting Answers...')
-        create_event()
+        while True:
+            check = input('Choose : \n[1] Edit Event\n[2] Cancel creating event\n[?] : ')
+            if check == '1':
+                print('Resetting Answers...')
+                create_event()
+                break
+            if check == '2':
+                print('Cancelling event...')
+                break
+            else:
+                continue
 
 
 def display_info():

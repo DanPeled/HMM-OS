@@ -1,7 +1,12 @@
 import time as t
 from datetime import datetime as dt
+import os
 
 holidays = {'12-31': 'New year'}
+
+
+def passed_event():
+    pass
 
 
 def upcoming_event(type_, event, year, month, day=None):
@@ -11,6 +16,26 @@ def upcoming_event(type_, event, year, month, day=None):
     if type_ == 'd':
         if dt.now().date().strftime("%Y.%m.%d") == f"{year}.{month}.{day}":
             print(f"{event} is today!")
+
+
+def delete_event(event, should_print):
+    if should_print:
+        text = open(f'events/event list.txt').read().replace(f'{event},', '')
+        answer = input(f'Are you sure you want to delete {event}? \n[Y] Yes\n[N] No\n[?] : ')
+        if answer == 'y':
+            os.remove(f'events/{event}.txt')
+            with open('events/event list.txt', 'r+') as f:
+                f.truncate(0)
+                print(f'was deleted')
+                f.write(text)
+        elif answer == 'n':
+            print(f'Cancelled deleting {event}')
+    elif not should_print:
+        text = open(f'events/event list.txt').read().replace(f'{event},', '')
+        os.remove(f'events/{event}.txt')
+        with open('events/event list.txt', 'r+') as f:
+            f.truncate(0)
+            f.write(text)
 
 
 def check_upcoming(_type):

@@ -533,6 +533,8 @@ def check_for_answers():
                     efu.check_upcoming('m')
                 if what_to_do == 'event -upcoming -d':
                     efu.check_upcoming('d')
+            elif what_to_do.startswith('event -delete '):
+                efu.delete_event(what_to_do.replace('event -delete ', ''), True)
             else:
                 print("Incorrect usage, the correct usage is :\n[1] event -list\n[2] event -create")
 

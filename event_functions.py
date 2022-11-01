@@ -4,6 +4,21 @@ import time as t
 holidays = {'12-31': 'New year'}
 
 
+def upcoming_month(event, year, month):
+    if dt.now().date().strftime("%Y.%m") == f"{year}.{month}":
+        print(f"{event} is upcoming this month!")
+
+
+def check_upcoming():
+    with open('events/event list.txt') as f:
+        read = f.read().split(',')
+        for event in read:
+            with open(f'events/{event}.txt') as file:
+                current_event = file.readlines()
+                event_date = current_event[2].replace('starts on - ', '').replace(' ', '').split('.')
+                upcoming_month(event=event, year=event_date[0], month=event_date[1])
+
+
 def check_for_events():
     if dt.now().strftime("%m-%d") in holidays:
         event = holidays[dt.now().strftime("%m-%d")]

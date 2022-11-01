@@ -1,6 +1,6 @@
 import platform
 from datetime import datetime
-
+import event_functions as efu
 import psutil
 
 import functions as fu
@@ -9,6 +9,7 @@ global device_type
 
 
 def run():
+    efu.check_upcoming()
     global device_type
     battery = psutil.sensors_battery()
     login_name = open('user/username.txt')

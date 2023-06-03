@@ -1,8 +1,8 @@
 # HMM OS
 
-A costume TOS (Terminal Operating System)
-
-Steps to start :<br/>
+A costume TOS (Terminal Operating System)</br>
+Made on Oct 8th 2022
+# Steps to start :<br/>
 
     1.Create a user.
     2.Choose a password, every space and small thing in the password matters.
@@ -38,8 +38,8 @@ Steps to start :<br/>
 <a href= "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/functions.py">functions.py</a> - a file containing and
 handling responses.<br/>
 <a href = "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/home.py">home.py</a> - main home screen.</br>
-<a href = "https://github.com/DanPeld/HMM-OS/blob/Hmmm_OS/entry.py">entry.py</a> - entry function for code.
-
+<a href = "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/entry.py">entry.py</a> - entry function for code.</br>
+<a href = "https://github.com/DanPeled/HMM-OS/blob/Hmmm_OS/event_functions.py">event_functions.py</a> - event functions
 # Future Ideas
 
 Messaging between users.</br>

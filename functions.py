@@ -491,7 +491,7 @@ def event_list():
 def check_for_errors(what_to_do):
     if what_to_do == 'open':
         return 'The right usage is \"open <app name>\"'
-    elif what_to_do.lower() == 'website' or what_to_do.lower() == 'enter a website':
+    elif what_to_do.casefold().lower() == 'website' or what_to_do.lower() == 'enter a website':
         return f'The right usage is \"{what_to_do.lower()} <website domain without \"https://\">\"'
     if what_to_do.startswith('cald') and what_to_do[5:] not in digits:
         return f"\"{what_to_do[5:]}\" is not a valid number, try again"
@@ -536,66 +536,66 @@ def check_for_answers():
             if what_to_do.lower().startswith('website '):
                 print(f'Opening {what_to_do[8:]} on the web')
                 enter_google(what_to_do[8:])
-            elif what_to_do.lower().startswith('enter a website '):
+            elif what_to_do.casefold().lower().startswith('enter a website '):
                 print(f'Opening {what_to_do[16:]} on google')
                 enter_google(what_to_do[16:])
-        elif what_to_do.lower() == 'shut down' or what_to_do.lower() == 'power off' or what_to_do == 'power':
+        elif what_to_do.casefold().lower() == 'shut down' or what_to_do.lower() == 'power off' or what_to_do == 'power':
             print(f'shutting off...')
             shut_down()
-        elif what_to_do.lower() == 'desk' or what_to_do.lower() == 'desktop':
+        elif what_to_do.casefold().lower() == 'desk' or what_to_do.lower() == 'desktop':
             print(f'Opening desktop')
             desktop()
-        elif what_to_do == 'leave':
+        elif what_to_do.casefold() == 'leave':
             leave()
-        elif what_to_do.lower().startswith('open '):
+        elif what_to_do.casefold().startswith('open '):
             print(f'Opening {what_to_do[5].capitalize() + what_to_do[6:]}')
             open_app(what_to_do[5:])
-        elif what_to_do == 'help':
+        elif what_to_do.casefold() == 'help':
             help_c()
-        elif what_to_do == 'snake':
+        elif what_to_do.casefold() == 'snake':
             snake()
-        elif what_to_do == 'calc age':
+        elif what_to_do.casefold() == 'calc age':
             calculate_age()
-        elif what_to_do == 'generate password':
+        elif what_to_do.casefold() == 'generate password':
             generate_password()
-        elif what_to_do[0] in str(digits):
+        elif what_to_do.casefold()[0] in str(digits):
             calculator(what_to_do)
-        elif what_to_do == 'BIOS':
+        elif what_to_do.casefold() == 'BIOS':
             display_info()
-        elif what_to_do.startswith('print '):
+        elif what_to_do.casefold().startswith('print '):
             _printASCII(what_to_do[6:])
-        elif what_to_do == 'battery':
+        elif what_to_do.casefold() == 'battery':
             battery_get()
-        elif what_to_do.startswith('revprint '):
+        elif what_to_do.casefold().startswith('revprint '):
             re_print(what_to_do[9:])
-        elif what_to_do.startswith('countdown '):
+        elif what_to_do.casefold().startswith('countdown '):
             countdown(what_to_do[10:])
-        elif what_to_do == 'time':
+        elif what_to_do.casefold() == 'time':
             time()
-        elif what_to_do == 'date':
+        elif what_to_do.casefold() == 'date':
             date()
-        elif what_to_do == 'file':
+        elif what_to_do.casefold() == 'file':
             files()
-        elif what_to_do == 'camera ASCII':
+        elif what_to_do.casefold().casefold() == 'camera ascii':
             camera_ASCII()
-        elif what_to_do == 'dice':
+        elif what_to_do.casefold() == 'dice':
             roll_dice()
-        elif what_to_do.startswith('cald '):
+        elif what_to_do.casefold().startswith('cald '):
             try:
                 caland(int(what_to_do[5:]))
             except:
                 print(check_for_errors(what_to_do))
-        elif what_to_do.startswith('event '):
+        elif what_to_do.casefold().startswith('event '):
             if what_to_do == 'event -create':
                 create_event()
-            elif what_to_do == 'event -list':
+            elif what_to_do.casefold() == 'event -list':
                 event_list()
-            elif what_to_do.startswith('event -upcoming'):
+            elif what_to_do.casefold().startswith('event -upcoming'):
                 if what_to_do == 'event -upcoming -m':
                     efu.check_upcoming('m')
                 if what_to_do == 'event -upcoming -d':
                     efu.check_upcoming('d')
-            elif what_to_do.startswith('event -delete '):
+            elif what_to_do.casefold().startswith('event -delete '):
                 efu.delete_event(what_to_do.replace('event -delete ', ''), True)
             else:
                 print("Incorrect usage, the correct usage is :\n[1] event -list\n[2] event -create")
